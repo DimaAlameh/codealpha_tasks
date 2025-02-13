@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #a2c2e3, #f4f7fc); /* Soft pastel gradient */
+}
+
+.gallery-container {
+  background: rgba(255, 255, 255, 0.9);  /* Slightly transparent white background */
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 1200px; /* Limit the maximum width for large screens */
+  margin: 20px auto; /* Center the gallery container */
+}
+
+.gallery-header {
+  background: #3498db; /* A calm blue color */
+  padding: 40px 0; /* Adjust padding to balance header height */
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 250px; /* Adjust the height to ensure text is centered */
+}
+
+.gallery-header h1 {
+  margin: 0;
+  font-size: 2.5rem; /* Increased font size for emphasis */
+}
+
+.gallery-header p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px; /* Limit paragraph width for better readability */
+}
+
+.gallery {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.image-wrapper {
+  display: flex;
+  transition: transform 1s ease-in-out;
+  width: 100%;
+}
+
+.gallery-image {
+  flex: 0 0 100%; /* Ensures each image takes up 100% width of the container */
+  object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
+  height: auto; /* Automatically adjusts the height */
+  max-height: 500px; /* Limit maximum height */
+  border-radius: 10px;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Light shadow for images */
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1); /* Slightly brighter on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(52, 152, 219, 0.8); /* Semi-transparent calm blue */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button:hover {
+  background: #2980b9; /* Slightly darker blue */
+  transform: scale(1.1); /* Subtle scale effect on hover */
+}
+
+#prev {
+  left: 20px;
+}
+
+#next {
+  right: 20px;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .gallery-container {
+    padding: 10px; /* Reduce padding on mobile */
+    margin: 10px; /* Reduce margins */
+  }
+
+  .gallery-header h1 {
+    font-size: 1.8rem; /* Smaller heading size on mobile */
+  }
+
+  .gallery-header p {
+    font-size: 1rem; /* Smaller paragraph size */
+    max-width: 100%; /* Full width on smaller screens */
+  }
+
+  .gallery-image {
+    max-height: 300px; /* Adjust max-height for mobile screens */
+  }
+
+  .nav-button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem; /* Smaller navigation button on mobile */
+  }
+}
